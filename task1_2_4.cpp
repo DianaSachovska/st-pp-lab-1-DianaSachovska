@@ -24,7 +24,7 @@ void AddToList(int a) {
 void ListContains(int a) {
     m1.lock();
     for (int i = 0; i < 10; i++) {
-        list<int> ::iterator it;
+        list < int > ::iterator it = std::find(l.begin(), l.end(), a);;
         if (it != l.end()) {
             cout << "Value " << a << " is present" << endl;
         } else {
@@ -35,14 +35,13 @@ void ListContains(int a) {
 }
 
 int main() {
-  
     int a = 5;
-  
+
     thread t1(AddToList, a);
     thread t2(ListContains, a);
-  
+
     t1.join();
     t2.join();
-  
+
     return 0;
 }

@@ -8,7 +8,7 @@
 
 using namespace std;
 
-list<int> l;
+list < int > l;
 
 void AddToList(int a) {
     l.push_back(a);
@@ -19,12 +19,13 @@ void AddToList(int a) {
     }
 }
 void ListContains(int a) {
-    list < int > ::iterator it = std::find(l.begin(), l.end(), a);
-
-    if (it != l.end()) {
-        cout << "Value " << a << " is present" << endl;
-    } else {
-        cout << "Value " << a << " not present" << endl;
+    for (int i = 0; i < 10; i++) {
+        list < int > ::iterator it = std::find(l.begin(), l.end(), a);
+        if (it != l.end()) {
+            cout << "Value " << a << " is present" << endl;
+        } else {
+            cout << "Value " << a << " not present" << endl;
+        }
     }
 }
 
